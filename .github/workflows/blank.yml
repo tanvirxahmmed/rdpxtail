@@ -139,7 +139,7 @@ jobs:
 
           $tsIP = & $ts ip -4 2>$null
           if (-not $tsIP) {
-            Write-Error "Could not retrieve Tailscale IP — check that TAILSCALE_AUTHKEY is valid."
+            Write-Error "Could not retrieve Tailscale IP - check that TAILSCALE_AUTHKEY is valid."
             exit 1
           }
 
@@ -147,7 +147,7 @@ jobs:
 
           Write-Host ""
           Write-Host "=============================================="
-          Write-Host "   ✅  RDP SESSION READY"
+          Write-Host "   [OK] RDP SESSION READY"
           Write-Host "=============================================="
           Write-Host "   Host     : $tsIP"
           Write-Host "   Port     : 3389"
@@ -158,7 +158,7 @@ jobs:
           Write-Host "     mstsc /v:${tsIP}"
           Write-Host ""
           Write-Host "   macOS (Microsoft Remote Desktop):"
-          Write-Host "     Add PC → $tsIP"
+          Write-Host "     Add PC -> $tsIP"
           Write-Host "=============================================="
 
       # ── 5. Keep the runner alive ───────────────────────────────
@@ -184,4 +184,4 @@ jobs:
           }
 
           Write-Host ""
-          Write-Host "⌛ Session timeout reached. Runner will now exit."
+          Write-Host "Session timeout reached. Runner will now exit."
